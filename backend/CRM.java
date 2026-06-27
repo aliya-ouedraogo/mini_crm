@@ -31,6 +31,6 @@ public boolean modifierStatut(String nom, String nouveauStatut) {
         System.out.println("Statut de " + nom + " mis à jour : " + nouveauStatut);
         return true;
     }
-    System.out,println("Client introuvable : " + nom);
+    System.out.println("Client introuvable : " + nom);
     return false;
 }
