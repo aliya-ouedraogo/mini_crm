@@ -24,3 +24,13 @@ public Client rechercherClient(String nom) {
     return null;
 }
 }
+public boolean modifierStatut(String nom, String nouveauStatut) {
+    client c = this.rechercherClient(nom);
+    if (c != null) {
+        c.setStatut(nouveauStatut);
+        System.out.println("Statut de " + nom + " mis à jour : " + nouveauStatut);
+        return true;
+    }
+    System.out,println("Client introuvable : " + nom);
+    return false;
+}
