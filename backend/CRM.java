@@ -14,4 +14,13 @@ public class CRM {
         System.out.println(c);
     }
 }
+public Client rechercherClient(String nom) {
+    for (Client c : this.listeClients) {
+        if (c.getNom().equalsIgnoreCase(nom)) {
+            return c;
+        }
+    }
+    System.out.println("Aucun client trouvé : " + nom);
+    return null;
+}
 }
