@@ -14,4 +14,23 @@ public class CRM {
         System.out.println(c);
     }
 }
+public Client rechercherClient(String nom) {
+    for (Client c : this.listeClients) {
+        if (c.getNom().equalsIgnoreCase(nom)) {
+            return c;
+        }
+    }
+    System.out.println("Aucun client trouvé : " + nom);
+    return null;
+}
+}
+public boolean modifierStatut(String nom, String nouveauStatut) {
+    client c = this.rechercherClient(nom);
+    if (c != null) {
+        c.setStatut(nouveauStatut);
+        System.out.println("Statut de " + nom + " mis à jour : " + nouveauStatut);
+        return true;
+    }
+    System.out.println("Client introuvable : " + nom);
+    return false;
 }
