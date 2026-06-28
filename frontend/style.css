@@ -16,7 +16,7 @@ header {
 
 h1 {
     text-align: center;
-    color: rgba(6, 77, 110, 0.582);
+    color: rgba(3, 43, 62, 0.582);
 }
 
 .container {
@@ -48,4 +48,9 @@ th {
     font-size: 16px;
     font-weight: bold;
     color: rgb(68, 190, 68);
+}
+.filtre { font-size: 18px;
+    font-weight: bold;
+    color: rgb(4, 34, 85);
+    
 }
