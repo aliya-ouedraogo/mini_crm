@@ -9,9 +9,19 @@
 <body>
 
     <h1>Liste des Clients</h1>
-    <div class="container">  
-        <table>
-            <thead>
+    <div class="container">
+        <div class="content">
+            <div class="filter-bar">
+                <label for="filter-status">Filtrer par statut :</label>
+                <select id="filter-status">
+                    <option value="all">Tous</option>
+                    <option value="Actif">Actif</option>
+                    <option value="Prospect">Prospect</option>
+                    <option value="Fidele">Fidèle</option>
+                </select>
+            </div>
+            <table id="clients-table">
+                <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Entreprise</th>
@@ -51,8 +61,25 @@
                     <td><span class="statut">Actif</span></td>
                 </tr>
             </tbody>
-        </table>
+            </table>
+        </div>
     </div>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.getElementById('filter-status');
+            const rows = Array.from(document.querySelectorAll('#clients-table tbody tr'));
+
+            select.addEventListener('change', () => {
+                const selectedStatus = select.value;
+
+                rows.forEach((row) => {
+                    const statusCell = row.querySelector('td:last-child .statut');
+                    const status = statusCell ? statusCell.textContent.trim() : '';
+                    row.style.display = (selectedStatus === 'all' || status === selectedStatus) ? '' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
